@@ -26,4 +26,7 @@ cat ~/.infisical/infisical-config.json
 ```bash
 # Dans un projet existant
 infisical init
+
+# Créé localement un fichier qui ne contient pas d'informations
+.infisical.json
 ```
