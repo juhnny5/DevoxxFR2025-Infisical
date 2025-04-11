@@ -1,5 +1,7 @@
 # DevoxxFR 2025
 
+![](img/logo.png)
+
 Titre : [**Infisical : Le meilleur ami des devs, pour des secrets bien gardés !**](https://mobile.devoxx.com/events/devoxxfr2025/talks/5874/details)
 Speaker : **Julien Briault**
 
