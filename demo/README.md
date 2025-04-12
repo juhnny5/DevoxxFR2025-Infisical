@@ -82,3 +82,9 @@ export SITE_URL='https://infisical.devoxx.jbriault.fr'
 
 go run main.go
 ```
+
+### Scanner un projet qui possède des secrets
+
+```bash
+
+```
