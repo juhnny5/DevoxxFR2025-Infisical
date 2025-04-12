@@ -2,6 +2,8 @@
 
 La plateforme de démonstration est disponible [ici](https://infisical.devoxx.jbriault.fr/).
 
+<iframe src="https://giphy.com/embed/ZtAIbzohYzyblovfwV" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/hammer-wreck-pistolavistas-ZtAIbzohYzyblovfwV"></a></p>
+
 ## Pour bien commencer
 
 ```bash
