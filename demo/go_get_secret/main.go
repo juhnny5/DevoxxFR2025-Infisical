@@ -42,7 +42,8 @@ func main() {
 		if err != nil {
 			log.Printf("Error retrieving API Key Secret: %v", err)
 		} else {
-			log.Printf("API Key Secret: %v", apiKeySecret)
+			log.Printf("(full) API Key Secret: %v", apiKeySecret)
+			// log.Printf("(only) API Key Secret: %v", apiKeySecret.SecretValue)
 		}
 
 		time.Sleep(2 * time.Second)
