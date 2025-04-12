@@ -31,7 +31,7 @@ infisical init
 .infisical.json
 ```
 
-### Récupérer un secret en fonction de l'environnement
+### Récupérer un secret en fonction de son nom et de l'environnement
 
 ```bash
 # Etape 1 : Générer token pour un environnement donné sur son projet
