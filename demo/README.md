@@ -27,7 +27,7 @@ cat ~/.infisical/infisical-config.json
 # Dans un projet existant
 infisical init
 
-# Créé localement un fichier qui ne contient pas d'informations
+# Créé localement un fichier qui ne contient pas d'informations sensibles
 .infisical.json
 ```
 
@@ -39,4 +39,11 @@ infisical init
 curl -sr GET \
   --url https://infisical.devoxx.jbriault.fr/api/v3/secrets/raw/<NOM_DU_SECRET> \
   --header 'Authorization: Bearer <TOKEN>' | jq .secret
+```
+
+### Afficher les secrets via la CLI
+
+```bash
+cd demo/project_example
+infisical secrets get API_KEY
 ```
