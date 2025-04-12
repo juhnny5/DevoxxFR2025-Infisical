@@ -56,8 +56,27 @@ infisical secrets get API_KEY --env prd
 ### Injecter des secrets via la CLI
 
 ```bash
-cd demo/project_example
+cd demo/project_example/
 
 infisical secrets set API_KEY=devsjdgwkeudyjwe --env dev
 infisical secrets set API_KEY=prdsjdgwkeudyjwe --env prd
+```
+
+### Récupérer les secrets dans un projet Go
+
+```bash
+cd demo/go_get_secret/
+
+# Charger les variables d'env
+source .env
+
+# Sinon vous pouvez le faire comme suit
+echo "
+export CLIENT_ID=''
+export CLIENT_SECRET=''
+export PROJECT_ID=''
+export SITE_URL='https://infisical.devoxx.jbriault.fr'
+" > .env
+
+go run main.go
 ```
