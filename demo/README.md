@@ -30,3 +30,13 @@ infisical init
 # Créé localement un fichier qui ne contient pas d'informations
 .infisical.json
 ```
+
+### Récupérer un secret en fonction de l'environnement
+
+```bash
+# Etape 1 : Générer token pour un environnement donné sur son projet
+# Etape 2 : Lancer le curl ;)
+curl -sr GET \
+  --url https://infisical.devoxx.jbriault.fr/api/v3/secrets/raw/<NOM_DU_SECRET> \
+  --header 'Authorization: Bearer <TOKEN>' | jq .secret
+```
