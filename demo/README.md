@@ -45,5 +45,19 @@ curl -sr GET \
 
 ```bash
 cd demo/project_example
+
+# Récupérer un secret (par défaut sur l'env de dev)
 infisical secrets get API_KEY
+
+# Récupérer un secret sur l'env de prod (prd)
+infisical secrets get API_KEY --env prd
+```
+
+### Injecter des secrets via la CLI
+
+```bash
+cd demo/project_example
+
+infisical secrets set API_KEY=devsjdgwkeudyjwe --env dev
+infisical secrets set API_KEY=prdsjdgwkeudyjwe --env prd
 ```
