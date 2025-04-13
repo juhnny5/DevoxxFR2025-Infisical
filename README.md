@@ -16,7 +16,7 @@
 
 ## La structure du projet
 
-```bash 
+```bash
 .
 ├── README.md # Vous êtes ici !
 ├── demo
@@ -38,3 +38,7 @@
 │   └── logo.png
 └── slides # Les slides du talk
 ```
+
+## Les démonstrations
+
+Les démos sont réutilisables dans le dossier `demo/`.
