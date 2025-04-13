@@ -48,6 +48,9 @@ curl -sr GET \
 ```bash
 cd demo/project_example
 
+# On peut générer un fichier .env avec ses secrets en variable d'env
+infisical secrets generate-example-env --env dev > .env
+
 # Récupérer un secret (par défaut sur l'env de dev)
 infisical secrets get API_KEY
 
