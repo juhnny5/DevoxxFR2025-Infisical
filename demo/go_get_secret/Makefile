@@ -1,7 +1,7 @@
 GOCMD=go
 PROJECT_NAME=devoxx
 SRC_DIR=.
-BUILD_DIR=bin
+BUILD_DIR=.
 
 all: build
 
