@@ -83,7 +83,8 @@ export PROJECT_ID=''
 export SITE_URL='https://infisical.devoxx.jbriault.fr'
 " > .env
 
-go run main.go
+go build -o devoxx
+./devoxx
 ```
 
 ### Scanner un projet qui possède des secrets

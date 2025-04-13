@@ -2,8 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -15,8 +13,9 @@ import (
 )
 
 var (
-	logs      []string
-	logsMutex sync.Mutex
+	logs        []string
+	logsMutex   sync.Mutex
+	stopRefresh = false
 )
 
 func main() {
@@ -42,6 +41,10 @@ func main() {
 
 	go func() {
 		for {
+			if stopRefresh {
+				break
+			}
+
 			apiKeySecret, err := client.Secrets().Retrieve(infisical.RetrieveSecretOptions{
 				SecretKey:   "API_KEY",
 				Environment: "dev",
@@ -62,54 +65,7 @@ func main() {
 	http.HandleFunc("/", handleLogs)
 	http.HandleFunc("/logs", handleLogs)
 	http.HandleFunc("/clear", handleClearLogs)
-	log.Println("Starting server on :8084")
-	log.Fatal(http.ListenAndServe("localhost:8084", nil))
-}
-
-func addLog(format string, args ...interface{}) {
-	logsMutex.Lock()
-	defer logsMutex.Unlock()
-	logMessage := fmt.Sprintf(format, args...)
-	logs = append(logs, logMessage)
-}
-
-func addLogWithTimestamp(format string, args ...interface{}) {
-	logsMutex.Lock()
-	defer logsMutex.Unlock()
-	timestamp := time.Now().Format(time.RFC1123)
-	logMessage := fmt.Sprintf("[%s] "+format, append([]interface{}{timestamp}, args...)...)
-	logs = append(logs, logMessage)
-}
-
-func handleLogs(w http.ResponseWriter, r *http.Request) {
-	logsMutex.Lock()
-	defer logsMutex.Unlock()
-
-	tmpl := template.Must(template.New("logs").Parse(`
-		<!DOCTYPE html>
-		<html>
-		<head>
-			<title>Logs Infisical - Get secrets with Go SDK - Demo Devoxx FR</title>
-			<meta http-equiv="refresh" content="1">
-		</head>
-		<body>
-			<h1>Logs Infisical - Get secrets with Go SDK</h1>
-			<form action="/clear" method="post">
-				<button type="submit">Clear Logs</button>
-			</form>
-			<pre>{{range .}}{{.}}<br>{{end}}</pre>
-		</body>
-		</html>
-	`))
-
-	tmpl.Execute(w, logs)
-}
-
-func handleClearLogs(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodPost {
-		logsMutex.Lock()
-		defer logsMutex.Unlock()
-		logs = []string{}
-		http.Redirect(w, r, "/", http.StatusSeeOther)
-	}
+	http.HandleFunc("/stop", handleStopRefresh)
+	log.Println("Starting server on http://localhost:8084")
+	log.Fatal(http.ListenAndServe(":8084", nil))
 }
