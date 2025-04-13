@@ -90,6 +90,9 @@ cd demo/project_with_secrets/
 # Scanner en mode verbeux
 infisical scan -v
 
+# Scanner les fichiers non commités
+infisical scan git-changes
+
 # Installer le hook pre-commit
 infisical scan install --pre-commit-hook
 
