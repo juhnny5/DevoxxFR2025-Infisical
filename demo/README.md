@@ -86,5 +86,13 @@ go run main.go
 ### Scanner un projet qui possède des secrets
 
 ```bash
+cd demo/project_with_secrets/
+# Scanner en mode verbeux
+infisical scan -v
 
+# Installer le hook pre-commit
+infisical scan install --pre-commit-hook
+
+# Ignorer des secrets
+touch .infisicalignore
 ```
