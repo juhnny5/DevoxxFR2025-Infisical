@@ -20,22 +20,22 @@
 .
 ├── README.md # Vous êtes ici !
 ├── demo
-│   ├── README.md # Les anti-sèches, parce que, pourquoi pas ?
-│   ├── go_get_secret # La démo
-│   │   ├── devoxx
-│   │   ├── go.mod
-│   │   ├── go.sum
-│   │   ├── handlers.go
-│   │   ├── main.go
-│   │   ├── templates
-│   │   │   └── logs.html
-│   │   └── utils.go
-│   ├── project_example # Exemple de projet
-│   └── project_with_secrets # Projet avec des secrets à scanner
-│       ├── go.mod
-│       └── main.go
+│   ├── README.md # Les anti-sèches, parce que, pourquoi pas ?
+│   ├── go_get_secret # La démo
+│   │   ├── devoxx
+│   │   ├── go.mod
+│   │   ├── go.sum
+│   │   ├── handlers.go
+│   │   ├── main.go
+│   │   ├── templates
+│   │   │   └── logs.html
+│   │   └── utils.go
+│   ├── project_example # Exemple de projet
+│   └── project_with_secrets # Projet avec des secrets à scanner
+│       ├── go.mod
+│       └── main.go
 ├── img # De belles images
-│   └── logo.png
+│   └── logo.png
 └── slides # Les slides du talk
 ```
 
